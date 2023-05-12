@@ -1,14 +1,18 @@
 #include <stdio.h>
-#include <string.h>
 int main()
 {
-    char c[1000000];
-    scanf("%s", c);
+    char c;
     int count[26] = {0};
-    for (int i = 0; i < strlen(c); i++)
+    int i = 0;
+    while (scanf("%c", &c) != EOF)
     {
-        int j = c[i] - 97;
-        count[j]++;
+        // printf("%c\n", c);
+        int intValue = c - 'a';
+        if (c != '\0')
+        {
+            // printf("%d\n", intValue);
+            count[intValue]++;
+        }
     }
     for (int i = 0; i < 26; i++)
     {
@@ -19,6 +23,5 @@ int main()
             printf("%c : %d\n", alphabet, count[i]);
         }
     }
-
     return 0;
 }
